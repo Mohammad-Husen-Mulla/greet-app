@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" />
+<script type="text/javascript"
+	src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#pj-next-btn").click(function() {
+			$.ajax({
+				type : "GET",
+				url : "update-pj",
+				success : function(data) {
+					$(".ans-pj-div").html(data);
+				}
+			});
+		})
+
+	})
+</script>
+
+</head>
+<body class="container p-5 text-center">
+
+	<div class="jokes-div">
+
+		<div class="ans-pj-div">
+			<p id="joke-title" th:text="${pj}"></p>
+			<hr />
+			<div class="pj-ans-block " id="pj-ans-block">
+				<p class="laugh-animate">😆</p>
+				<p class="ans-text" th:text="${pja}"></p>
+				<p class="laugh-animate">😆</p>
+			</div>
+		</div>
+		<div class="btn-events-s">
+			<button id="btn-show-ans">Answer :) </button>
+			<button id="pj-next-btn">Next ></button>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/script.js">
+		
+	</script>
+</body>
+</html>

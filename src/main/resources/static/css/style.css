@@ -1,0 +1,89 @@
+body {
+  height: 40.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#joke-title {
+  font-size: 2em;
+}
+
+.jokes-div {
+  display: grid;
+  grid-template-rows: 1fr;
+  border: 1px solid #9999;
+  grid-row-gap: 2.5em;
+  padding: 1.5em 3.1em 1.5em 3.1em;
+}
+
+#btn-show-ans {
+  padding: 0.6em 1.2em 0.6em 1.2em;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.25em;
+  border-radius: 0.3em;
+  color: #000;
+  background-color: #f9e400;
+}
+
+#btn-show-ans:hover {
+  opacity: 0.8;
+}
+
+#pj-next-btn {
+  padding: 0.6em 1.2em 0.6em 1.2em;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-left: 1.5em;
+  font-size: 1.25em;
+  border-radius: 0.3125em;
+  background-color: #7c00fe;
+  color: #f7f7f7;
+}
+
+#pj-next-btn:hover {
+  opacity: 0.8;
+}
+
+.pj-ans-block {
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.ans-text {
+  font-size: 1.875em;
+  transform: translateY(0);
+}
+
+.pj-ans-block-show {
+  font-size: 1.125em;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+  display: flex;
+  gap: 1.85em;
+}
+
+.laugh-animate {
+  font-size: 2em;
+  animation: blinker 1s linear infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 8px;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    transform: rotate(45deg);
+  }
+}
